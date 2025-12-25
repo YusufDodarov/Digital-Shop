@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-function Article({ product,isAdmin }: ArticleProps&{idAdmin:{isAdmin:boolean}}) {
+function Article({ product,isAdmin }: ArticleProps) {
   try {
     const img = product?.images?.[0]?.image;
   
@@ -28,7 +28,7 @@ function Article({ product,isAdmin }: ArticleProps&{idAdmin:{isAdmin:boolean}}) 
           <p className="text-lg font-semibold">${product?.price}</p>
           <div className="flex gap-2 cursor-pointer">
             <div>
-              <Like product={product}/>
+              <Like isAdmin={isAdmin} product={product}/>
             </div>
           </div>
         </div>

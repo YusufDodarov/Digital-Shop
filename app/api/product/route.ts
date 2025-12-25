@@ -4,10 +4,11 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request:NextRequest,response:NextResponse) {
-    const data =await prisma.product.findMany({ include: { images: true } });
-    return NextResponse.json({data:data})   
+export async function GET(request: NextRequest) {
+  const data = await prisma.product.findMany({ include: { images: true } });
+  return NextResponse.json({ data });
 }
+
 
 export const getProductById = async(id:string)=>{
     const result =await prisma.product.findFirst({include:{images:true},where:{id}})

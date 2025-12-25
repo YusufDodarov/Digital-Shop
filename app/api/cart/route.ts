@@ -38,7 +38,6 @@ export async function POST(req: NextRequest) {
       data: { quantity: existingCartItem.quantity + 1 },
     });
 
-    // Навсозии суратҳо (агар дода шаванд)
     if (images?.length) {
       for (const img of images) {
         await prisma.image.create({

@@ -62,10 +62,10 @@ export type FavoriteContext={
   toggleFavorite: (product:ProductsWithImages)=>void
 }
 
-export interface ArticleProps {
-  product: ProductsWithImages;
+export type ArticleProps = {
+  product: ProductsWithImages
+  isAdmin: boolean 
 }
-
 
 export type OrderPayload={
   userId:string
